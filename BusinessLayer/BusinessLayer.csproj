@@ -61,9 +61,25 @@
       <Project>{7fb5a5a9-58f0-474f-87fa-8371d10b4e4e}</Project>
       <Name>WebApp3</Name>
     </ProjectReference>
+    <ProjectReference Include="..\WebApp4\WebApp4.csproj">
+      <Project>{a9e28e4e-79ac-4d6e-80c7-f1ef9da24816}</Project>
+      <Name>WebApp4</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\WebApp5\WebApp5.csproj">
+      <Project>{ff2ef220-f735-4340-a875-3c35802a9323}</Project>
+      <Name>WebApp5</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\WebApp6\WebApp6.csproj">
+      <Project>{22a5d246-ecd4-4123-9aa8-578c8facd1f2}</Project>
+      <Name>WebApp6</Name>
+    </ProjectReference>
     <ProjectReference Include="..\WebApplication1\WebApplication1.csproj">
       <Project>{e8034169-707b-48a1-b0f8-e9ed4aaf0e99}</Project>
       <Name>WebApplication1</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\WebApplication2\WebApplication2.csproj">
+      <Project>{256bba1e-50eb-438e-b468-4e7ea9e288ff}</Project>
+      <Name>WebApplication2</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

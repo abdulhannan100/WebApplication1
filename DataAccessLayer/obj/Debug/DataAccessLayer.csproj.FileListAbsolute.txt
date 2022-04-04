@@ -22,3 +22,15 @@ C:\Users\Ei08169\Desktop\DevOpsTraining1\DataAccessLayer\obj\Debug\DataAccessLay
 C:\Users\Ei08169\Desktop\DevOpsTraining1\DataAccessLayer\obj\Debug\DataAccessLayer.csproj.CopyComplete
 C:\Users\Ei08169\Desktop\DevOpsTraining1\DataAccessLayer\obj\Debug\DataAccessLayer.dll
 C:\Users\Ei08169\Desktop\DevOpsTraining1\DataAccessLayer\obj\Debug\DataAccessLayer.pdb
+C:\Users\Ei08169\Desktop\DevOpsTraining1\DataAccessLayer\bin\Debug\WebApp4.dll
+C:\Users\Ei08169\Desktop\DevOpsTraining1\DataAccessLayer\bin\Debug\WebApp5.dll
+C:\Users\Ei08169\Desktop\DevOpsTraining1\DataAccessLayer\bin\Debug\WebApp6.dll
+C:\Users\Ei08169\Desktop\DevOpsTraining1\DataAccessLayer\bin\Debug\WebApplication2.dll
+C:\Users\Ei08169\Desktop\DevOpsTraining1\DataAccessLayer\bin\Debug\WebApp4.pdb
+C:\Users\Ei08169\Desktop\DevOpsTraining1\DataAccessLayer\bin\Debug\WebApp4.dll.config
+C:\Users\Ei08169\Desktop\DevOpsTraining1\DataAccessLayer\bin\Debug\WebApp5.pdb
+C:\Users\Ei08169\Desktop\DevOpsTraining1\DataAccessLayer\bin\Debug\WebApp5.dll.config
+C:\Users\Ei08169\Desktop\DevOpsTraining1\DataAccessLayer\bin\Debug\WebApp6.pdb
+C:\Users\Ei08169\Desktop\DevOpsTraining1\DataAccessLayer\bin\Debug\WebApp6.dll.config
+C:\Users\Ei08169\Desktop\DevOpsTraining1\DataAccessLayer\bin\Debug\WebApplication2.pdb
+C:\Users\Ei08169\Desktop\DevOpsTraining1\DataAccessLayer\bin\Debug\WebApplication2.dll.config
