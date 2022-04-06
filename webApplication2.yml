@@ -1,0 +1,79 @@
+# Starter pipeline
+# Start with a minimal pipeline that you can customize to build and deploy your code.
+# Add steps that build, run tests, deploy, and more:
+# https://aka.ms/yaml
+
+trigger:
+- master
+
+pool:
+  vmImage: windows-2019
+
+steps:
+- task: PowerShell@2
+  inputs:
+    targetType: 'inline'
+    script: |
+      # Write your PowerShell commands here.
+            
+      Get-ChildItem -Path $(Build.SourcesDirectory)
+- task: VSBuild@1
+  inputs:
+    solution: '**\WebApplication2\WebApplication2.sln'
+    vsVersion: '16.0'
+    platform: '$(BuildPlatform)'
+    configuration: '$(BuildConfiguration)'
+
+- task: CopyFiles@2
+  inputs:
+    SourceFolder: '$(Build.SourcesDirectory)\WebApp4'
+    Contents: '**'
+    TargetFolder: '$(build.artifactstagingdirectory)'
+  condition:  eq(variables['webapp4BuildSuccess'], 'true')
+
+- task: CopyFiles@2
+  inputs:
+    SourceFolder: '$(Build.SourcesDirectory)\WebApp5'
+    Contents: '**'
+    TargetFolder: '$(build.artifactstagingdirectory)'
+  condition:  eq(variables['webapp5BuildSuccess'], 'true')
+
+- task: CopyFiles@2
+  inputs:
+    SourceFolder: '$(Build.SourcesDirectory)\WebApp6'
+    Contents: '**'
+    TargetFolder: '$(build.artifactstagingdirectory)'
+  condition:  eq(variables['webapp6BuildSuccess'], 'true')
+
+- task: UniversalPackages@0
+  inputs:
+    command: 'publish'
+    publishDirectory: '$(Build.ArtifactStagingDirectory)'
+    feedsToUsePublish: 'internal'
+    vstsFeedPublish: '8e741ad7-ef76-4790-afaf-d3b10c2a6e06/cf3919f0-5322-4758-9034-401780870f3a'
+    vstsFeedPackagePublish: 'webapp4'
+    versionOption: 'custom'
+    versionPublish: '$(releaseVersion)'
+  condition:  eq(variables['webapp4BuildSuccess'], 'true')
+
+- task: UniversalPackages@0
+  inputs:
+    command: 'publish'
+    publishDirectory: '$(Build.ArtifactStagingDirectory)'
+    feedsToUsePublish: 'internal'
+    vstsFeedPublish: '8e741ad7-ef76-4790-afaf-d3b10c2a6e06/cf3919f0-5322-4758-9034-401780870f3a'
+    vstsFeedPackagePublish: 'webapp5'
+    versionOption: 'custom'
+    versionPublish: '$(releaseVersion)'
+  condition:  eq(variables['webapp5BuildSuccess'], 'true')
+
+- task: UniversalPackages@0
+  inputs:
+    command: 'publish'
+    publishDirectory: '$(Build.ArtifactStagingDirectory)'
+    feedsToUsePublish: 'internal'
+    vstsFeedPublish: '8e741ad7-ef76-4790-afaf-d3b10c2a6e06/cf3919f0-5322-4758-9034-401780870f3a'
+    vstsFeedPackagePublish: 'webapp6'
+    versionOption: 'custom'
+    versionPublish: '$(releaseVersion)'
+  condition:  eq(variables['webapp6BuildSuccess'], 'true')
