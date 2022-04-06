@@ -52,24 +52,6 @@ steps:
     TargetFolder: '$(build.artifactstagingdirectory)'
   condition:  eq(variables['DatabaseBuildSuccess'], 'true')
 
-- task: ArchiveFiles@2
-  inputs:
-    rootFolderOrFile: '$(Build.SourcesDirectory)\ReleaseScripts'
-    includeRootFolder: true
-    archiveType: 'zip'
-    archiveFile: '$(Build.ArtifactStagingDirectory)/$(Build.BuildId).zip'
-    replaceExistingArchive: true
-
-- task: UniversalPackages@0
-  inputs:
-    command: 'publish'
-    publishDirectory: '$(Build.ArtifactStagingDirectory)/$(Build.BuildId).zip'
-    feedsToUsePublish: 'internal'
-    vstsFeedPublish: '8e741ad7-ef76-4790-afaf-d3b10c2a6e06/cf3919f0-5322-4758-9034-401780870f3a'
-    vstsFeedPackagePublish: 'database'
-    versionOption: 'custom'
-    versionPublish: '$(releaseVersion)'
-
 - task: UniversalPackages@0
   inputs:
     command: 'publish'
